@@ -249,8 +249,9 @@ footer {
     border: 0;
 }
 .localization-text{
-    color: white;
     text-align: center;
+    margin-bottom: 30px;
+}
+.localization-text h3{
     font-family: 'Courier New';
 }
-
