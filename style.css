@@ -248,10 +248,8 @@ footer {
     min-height: 70vh;
     border: 0;
 }
-.localization-text{
+.escrita{
     text-align: center;
-    margin-bottom: 30px;
+    color: white;
 }
-.localization-text h3{
-    font-family: 'Courier New';
-}
+
