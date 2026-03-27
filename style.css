@@ -1,0 +1,251 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.texto-montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--preto-fundo);
+}
+
+
+:root {
+    --cinza-claro: #b5b5b5;   /* Texto secundário / Links */
+    --cinza-medio: #424242;   /* Linhas de bordas / Hover */
+    --cinza-escuro: #262626;  /* Fundo do Header / Cards */
+    --preto-fundo: #020202;   /* Fundo principal do site */
+}
+
+header {
+    background-color: var(--cinza-escuro);
+    border-bottom: 2px solid var(--cinza-medio);
+    height: 80px; 
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.container-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.logo-container .logo-img {
+    height: 240px; 
+    width: auto;
+    display: block;
+    position: relative; 
+    top: 5px; 
+    transition: transform 0.3s ease;
+}
+
+.menu-navegacao ul {
+    list-style: none; 
+    display: flex;
+    gap: 30px; 
+}
+
+.menu-navegacao ul li a {
+    text-decoration: none; 
+    color: var(--cinza-claro); 
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    transition: color 0.3s ease; 
+}
+
+.menu-navegacao ul li a:hover {
+    color: white; 
+}
+
+main {
+    margin-top: 100px;
+}
+
+.cta-parallax {
+    position: relative;
+    height: 50vh;
+    width: 100%;
+    
+    background-image: url('imagens/carro.png');
+    /*background-attachment: fixed;*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--cinza-medio);
+}
+
+.cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(2, 2, 2, 0.4); 
+    z-index: 1;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.titulo-gatwick {
+    font-family: 'Gatwick', sans-serif; 
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.texto-montserrat {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: var(--cinza-claro);
+    margin-bottom: 30px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.cta-buttons a {
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    padding: 15px 35px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-whatsapp {
+    background-color: #25D366; /* Cor padrão WhatsApp */
+    color: white;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1eb954;
+    transform: scale(1.05);
+}
+
+.btn-email {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-email:hover {
+    background-color: white;
+    color: var(--preto-fundo);
+}
+
+.section-contents{
+    padding: 50px 20px;
+    background-color: var(--preto-fundo);
+}
+
+.local-contents {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--cinza-escuro);
+    border: 1px solid var(--cinza-medio);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    max-width: 250px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: var(--cinza-claro);
+    margin: 0;
+}
+
+
+/* Responsividade para celulares */
+@media (max-width: 768px) {
+    .titulo-gatwick { font-size: 2rem; }
+    .cta-buttons { flex-direction: column; }
+    .cta-parallax { background-attachment: scroll; } /* Parallax costuma ser desativado em mobile para performance */
+    .cards { flex-direction: column; align-items: center; }
+}
+
+footer {
+    background-color: var(--cinza-escuro);
+    color: var(--cinza-claro);
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.footer-content p {
+    margin: 5px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+}
+.local-maps{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+
+}
+.maps-img{
+    
+    background-color: var(--preto-fundo);
+    border: 1px solid green;
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-position: center;
+}
+.map{
+    width: 70%;    
+    min-height: 70vh;
+    border: 0;
+}
+
