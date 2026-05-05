@@ -294,11 +294,11 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: 'FE-Schrift', sans-serif;
-    color: #1a1a1a;
     font-weight: 700;
     pointer-events: none;
     text-align: center;
     white-space: nowrap;
+    transition: color 0.3s ease;
 }
 
 .tipo-carro .caracteres-placa {
@@ -308,10 +308,10 @@ header {
 }
 
 .tipo-moto .caracteres-placa {
-    top: 52%;
-    font-size: 3.5rem;
-    line-height: 0.9;
-    letter-spacing: 5px;
+    top: 58%;
+    font-size: 5rem;
+    line-height: 1.08;
+    letter-spacing: 8px;
     width: 100%;
     white-space: normal;
 }

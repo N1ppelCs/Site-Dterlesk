@@ -2,62 +2,86 @@ const modelosPlacas = [
     {
         src: 'imagens/placa_particular.png',
         nome: 'Placa Mercosul Particular',
-        tipo: 'carro'
+        tipo: 'carro',
+        cor: '#1a1a1a'
     },
     {
         src: 'imagens/placa_comercial.png',
         nome: 'Placa Mercosul Comercial',
-        tipo: 'carro'
+        tipo: 'carro',
+        cor: '#cc1122'
     },
     {
         src: 'imagens/placa_oficial.png',
         nome: 'Placa Mercosul Oficial',
-        tipo: 'carro'
+        tipo: 'carro',
+        cor: '#1a6bbf'
+    },
+    {
+        src: 'imagens/placa-colecionador-preta.png',
+        nome: 'Placa Mercosul Colecionador Original',
+        tipo: 'carro',
+        cor: '#f1f1f1'
     },
     {
         src: 'imagens/placa_colecionador.png',
-        nome: 'Placa Mercosul Colecionador',
-        tipo: 'carro'
+        nome: 'Placa Mercosul Colecionador Modificado ',
+        tipo: 'carro',
+        cor: '#b0a0a8'
     },
     {
         src: 'imagens/placa_especial.png',
         nome: 'Placa Mercosul Especial',
-        tipo: 'carro'
+        tipo: 'carro',
+        cor: '#1a8c3a'
     },
     {
         src: 'imagens/placa_diplomatico.png',
         nome: 'Placa Mercosul Diplomático',
-        tipo: 'carro'
+        tipo: 'carro',
+        cor: '#e08000'
     },
     {
         src: 'imagens/moto_particular.png',
         nome: 'Placa Moto Particular',
-        tipo: 'moto'
+        tipo: 'moto',
+        cor: '#000000'
     },
     {
         src: 'imagens/moto_comercial.png',
         nome: 'Placa Moto Comercial',
-        tipo: 'moto'
+        tipo: 'moto',
+        cor: '#cc1122'
     },
     {
         src: 'imagens/moto_oficial.png',
         nome: 'Placa Moto Oficial',
-        tipo: 'moto'
+        tipo: 'moto',
+        cor: '#1a6bbf'
+    },
+    {
+        src: 'imagens/moto-colecionador-preta.png',
+        nome: 'Placa Moto Colecionador Original',
+        tipo: 'moto',
+        cor: '#f1f1f1'
     },
     {
         src: 'imagens/moto_colecionador.png',
-        nome: 'Placa Moto Colecionador',
-        tipo: 'moto'
+        nome: 'Placa Moto Colecionador Modificado',
+        tipo: 'moto',
+        cor: '#b0a0a8'
     },
     {
         src: 'imagens/moto_especial.png',
         nome: 'Placa Moto Especial',
-        tipo: 'moto'
+        tipo: 'moto',
+        cor: '#1a8c3a'
     },
     {
         src: 'imagens/moto_diplomatico.png',
         nome: 'Placa Moto Diplomático',
-        tipo: 'moto'
+        tipo: 'moto',
+        cor: '#e08000'
     },
 ];
 
@@ -90,16 +114,13 @@ function atualizarInterfaceSimulador(direcao = 0) {
         imgFundoSim.src = modelo.src;
         nomeModeloSim.innerText = modelo.nome;
         containerSim.className = `placa-base tipo-${modelo.tipo}`;
+        displayPlaca.style.color = modelo.cor;
 
-        if (inputPlaca) {
-            const valor = inputPlaca.value.toUpperCase();
-            if (modelo.tipo === 'moto' && valor.length > 3) {
-                displayPlaca.innerHTML = valor.substring(0, 3) + '<br>' + valor.substring(3);
-            } else {
-                displayPlaca.innerText = valor || 'ABC1D23';
-            }
+        const valor = inputPlaca.value.toUpperCase() || 'ABC1D23';
+        if (modelo.tipo === 'moto' && valor.length > 3) {
+            displayPlaca.innerHTML = valor.substring(0, 3) + '<br>' + valor.substring(3);
         } else {
-            displayPlaca.innerText = 'ABC1D23';
+            displayPlaca.innerText = valor;
         }
 
         containerSim.style.transform = `translateX(${entrarX})`;
