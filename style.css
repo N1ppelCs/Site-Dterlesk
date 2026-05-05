@@ -757,6 +757,7 @@ header {
 .footer-social-icons {
     display: flex;
     gap: 15px;
+    
 }
 
 .footer-social-icons a {
@@ -770,6 +771,7 @@ header {
     color: #fff;
     font-size: 1.1rem;
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .footer-social-icons a:hover {
