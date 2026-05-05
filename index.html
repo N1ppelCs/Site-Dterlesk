@@ -13,60 +13,87 @@
 <header>
     <div class="container-header">
         <div class="logo-container">
-            <img src="imagens/letreiro.png"DTERLESKI PLACAS - Loja de Carros" class="logo-img">
+        <a href="#">
+        <img src="imagens/logo.png" alt="DTERLESKI PLACAS" class="logo-img">
+        </a>
         </div>
 
         <nav class="menu-navegacao">
-            <ul>
-                <li><a href="#apresentacao">Apresentação</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="#localizacao">Localização</a></li>
-            </ul>
-        </nav>
+    <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#Servicos">Serviços</a></li>
+        <li><a href="#Sobre">Sobre</a></li>
+        <li><a href="#localizacao">Localização</a></li>
+    </ul>
+
+    <div class="header-socials">
+    <a href="https://instagram.com/dterleski_placas" target="_blank" class="social-icon">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://wa.me/554733072997" target="_blank" class="social-icon whatsapp-header-icon">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    </div>
+</nav>
     </div>
 </header>
 
 
---> Ei amanda e Gustavo, Este comentario é do Teste!, aqui está o código HTML para a página inicial do site da DTERLESKI PLACAS.
- Ele inclui uma seção de chamada para ação com um parallax,
-  uma seção de conteúdos com cards para os serviços oferecidos,
-   e uma seção de mapas com um iframe do Google Maps para mostrar a localização da empresa.
-    O rodapé contém informações de contato e direitos autorais.
-     Se precisarem de mais alguma coisa ou quiserem fazer ajustes, é só avisar!
+
 
 
 <main>
 
-<section class="cta-parallax">
-    <div class="cta-overlay"></div>
-    <div class="cta-content">
-        <h1 class="titulo-gatwick">Bem-vindo à DTERLESKI PLACAS</h1>
-        <p class="texto-montserrat">Placas Mercosul Feitas Em 10 Minutos!</p>
-        <div class="cta-buttons">
-            <a href="https://wa.me/554733072997" class="btn-whatsapp">Fale Conosco no WhatsApp</a>
-            <a href="mailto:dterleskiemplacamento@gmail.com" class="btn-email">Envie um Email</a>
+<section class="provador-section">
+    <div class="container-provador">
+        <div class="carro-base">
+            <div class="video-container" id="video"> 
+                <video autoplay muted loop playsinline class="video-bg">
+                    <source src="imagens/video-opção3.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+                <img src="imagens/carro-placa.png" alt="Dterleski Placas" class="img-bg-mobile">
+                <div class="video-overlay"></div>
+            </div>
+            
+            <h1 class="welcome-text">
+                <span class="line-small">Bem-vindos à</span>
+                <span class="line-large">DTERLESKI</span>
+                <span class="line-medium">PLACAS</span>
+            </h1>
         </div>
     </div>
-    
 </section>
 
-<section class="section-contents">
+
+<section class="section-contents" id="Servicos">
+    
+<div class="section-header" data-bg-text="Dterleski">
+    <div class="title-content">
+        <h2 class="section-title">Nossos Serviços</h2>
+        <div class="title-accent"></div>
+    </div>
+</div>
+
     <div class="local-contents">
         <div class="cards">
             <div class="card">
-                <img src="imagens/carro2.jpeg" alt="Card1">
-                <h3>Emplacamento de Veiculos 0KM</h3>
+                <img src="imagens/emplacamento-novo.jpeg" alt="Emplacamento 0KM">
+                <h3>Emplacamento de Veículos 0KM</h3>
             </div>
+
             <div class="card">
-                <img src="imagens/placa_antiga.png" alt="Carro">
-                <h3>Alteração de Placas Padrão Antigo Para Padrão Mercosul</h3>
+                <img src="imagens/substituição.PNG" alt="Troca Mercosul">
+                <h3>Troca de Placa Padrão Antigo para Mercosul</h3>
             </div>
+
             <div class="card">
-                <img src="imagens/placa_quebrada.png" alt="Letreiro">
-                <h3>Substituição de Placas Quebradas ou Perdidas</h3>
+                <img src="imagens/danificada.PNG" alt="Placas Danificadas">
+                <h3>Substituição de Placas Danificadas</h3>
             </div>
+
             <div class="card">
-                <img src="imagens/suporte.png" alt="Logo">
+                <img src="imagens/suporte-placas.PNG" alt="Suporte de Placa">
                 <h3>Instalação de Suporte de Placa</h3>
             </div>
         </div>
@@ -74,39 +101,133 @@
 </section>
 
 
-<section class="maps-section">
-   <div class="escrita">
-        <h3>NOSSA LOCALIZAÇÃO</h3>
+<section class="simulador-section" id="simulador">
+    <div class="section-header" data-bg-text="CUSTOM">
+        <div class="title-content">
+            <h2 class="section-title">Personalize sua Placa</h2>
+            <div class="title-accent"></div>
+        </div>
+    </div>
+
+    <div class="simulador-container">
+        <div class="simulador-main-content">
+            
+            <div class="simulador-visual">
+                <button class="sim-seta seta-esq" id="simPrev"><i class="fas fa-chevron-left"></i></button>
+                
+                <div id="placaContainerSim" class="placa-base tipo-carro">
+                    <img src="imagens/placa_particular.png" id="placaFundoSim" alt="Placa Mercosul" class="img-placa-vazia">
+                    <div id="placaTexto" class="caracteres-placa">ABC1D23</div>
+                </div>
+
+                <button class="sim-seta seta-dir" id="simNext"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <div class="input-container-side">
+                <div class="input-group">
+                    <label for="inputPlaca">Sequência da Placa</label>
+                    <input type="text" id="inputPlaca" maxlength="7" placeholder="ABC1D23" autocomplete="off">
+                </div>
+                <div class="info-modelo">
+                    <span class="label-mini">Modelo Selecionado</span>
+                    <span id="nomeModeloPlaca" class="modelo-badge">Placa Mercosul Particular</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<section class="about-section" id="Sobre">
+    <div class="about-image">
+        <img src="imagens/fachada-deterleski.png" alt="Dterleski Placas">
+    </div>
+
+    <div class="about-content">
+        <div class="about-header">
+            <h2 class="about-title">Sobre Nós</h2>
+            <div class="title-accent"></div> </div>
+        
+        <div class="about-text-wrapper">
+        <p class="about-paragraph">
+            A trajetória da <span>Dterleski Placas</span> é pautada por uma evolução contínua, movida por visão estratégica e disciplina. Fundada em 6 de maio de 2021, sob o nome de <em>Opala Placas</em>, a empresa consolidou seu início focando na legalidade e no compromisso inabalável com o cliente.
+        </p>
+
+        <p class="about-paragraph">
+            Em 1º de novembro de 2025, a empresa vivenciou um marco decisivo: sob nova direção, iniciou-se uma fase orientada à sofisticação e à estruturação de processos. Essa transição elevou o padrão de entrega, unindo a experiência técnica a uma gestão focada na excelência operacional.
+        </p>
+        <p class="about-paragraph">
+            Como estampadora <strong>EPIV</strong>, a Dterleski Placas destaca-se pela precisão técnica e total conformidade com as rigorosas normas do DETRAN. Investimos constantemente em inovação e organização para garantir que cada placa produzida seja sinônimo de segurança e confiabilidade.
+        </p>
+
+        <p class="about-paragraph highlight">
+            Mais do que fabricar placas, construímos credibilidade e entregamos soluções que priorizam a satisfação plena de nossos clientes.
+        </p>
+    </div>
+        <a href="https://wa.me/554733072997" class="btn-about-contact">
+            Entre em Contato <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</section>
+
+
+
+<section class="maps-section" id="localizacao">
+    <div class="maps-header">
+        <div class="maps-title-content">
+            <h2 class="maps-title">Nossa Localização</h2>
+            <div class="title-accent"></div> </div>
     </div>
 
     <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1506.1162593053589!2d-50.31059157016856!3d-26.126053558044294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e773007b18e483%3A0xafe8eb5c2e38842a!2sDterleski%20Placas!5e0!3m2!1spt-BR!2sbr!4v1774706327567!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" class="mapa-full" loading="lazy"></iframe>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17039.9878782634!2d-50.32439451062573!3d-26.124493449696764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e773007b18e483%3A0xafe8eb5c2e38842a!2sDterleski%20Placas!5e0!3m2!1spt-BR!2sbr!4v1777642670041!5m2!1spt-BR!2sbr" 
+            class="mapa-full" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
     </div>    
 </section>
 
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-info">
-            <p>Avenida Rigesa, 2636</p>
-            <p>Três Barras, SC</p>
-            <br>
-            <p>Segunda à Quinta das 08:00h às 12:00h & 13:15h às 18:00h</p>
-            <p>Sexta: 08:00h às 12:00h & 13:15h às 17:00h</p>
-            <p>(Disponível agendamento de horário fora do expediente)</p>
-            <br>
-            <p>Contato: (47) 3307-2997 | Instagram: @dterleski_placas</p>
-            <br>
-            <p>&copy; 2026 DTERLESKI PLACAS. Todos os direitos reservados.</p>
+    <footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column branding">
+            <img src="imagens/logo.png" alt="Dterleski Placas" class="footer-logo">
+            <div class="footer-social-icons">
+                <a href="https://instagram.com/dterleski_placas" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/554733072997" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             </div>
-            <div class="footer-icons">
-                <i></i>
-            </div>
-
         </div>
-    </footer>
 
+        <div class="footer-column links">
+            <h4>Navegação</h4>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#localizacao">Localização</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column contact">
+            <h4>Visite-nos</h4>
+            <p><i class="fas fa-map-marker-alt"></i> Avenida Rigesa, 2636<br>Três Barras, SC</p>
+            <p><i class="fas fa-clock"></i> Seg. à Qui. 08:00 - 18:00<br>Sex. 08:00 - 17:00</p>
+            <p><i class="fas fa-phone"></i> (47) 3307-2997</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Dterleski Placas. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+<script src="script.js"></script>
 </body>
 
 <a href="https://wa.me/554733072997" class="whatsapp-float" target="_blank">
