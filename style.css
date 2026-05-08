@@ -28,7 +28,7 @@ body {
 }
 
 
-/* --- SCROLL REVEAL --- */
+/* --- SCROLL --- */
 
 .reveal {
     opacity: 0;
@@ -124,11 +124,17 @@ header {
     align-items: center;
 }
 
-.logo-container .logo-img {
-    height: 120px;
-    width: auto;
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
-    transition: transform 0.3s ease;
+.logo-container {
+    display: flex;
+    align-items: center;
+    height: 100%; 
+}
+
+.logo-img {
+    height: 140px; 
+    width: auto;   
+    transition: transform 0.3s ease; 
+    display: block;
 }
 
 .logo-container:hover .logo-img {
@@ -146,7 +152,7 @@ header {
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    font-size: 0.85rem;
+    font-size: 0.80rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     position: relative;
@@ -195,7 +201,6 @@ header {
 }
 
 
-/* --- TÍTULO DO VÍDEO --- */
 
 .welcome-text {
     position: absolute;
@@ -247,6 +252,7 @@ header {
 
 /* --- SIMULADOR --- */
 
+
 .simulador-section {
     position: relative;
     padding: 0px 5%;
@@ -260,9 +266,9 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 30px;
     max-width: 1200px;
-    margin: 1px auto 0;
+    margin: 0 auto;
     padding: 20px;
 }
 
@@ -271,6 +277,14 @@ header {
     align-items: center;
     gap: 20px;
     flex: 1;
+    
+}
+
+.visual-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
 }
 
 .placa-base {
@@ -321,11 +335,20 @@ header {
     margin: 0 auto;
 }
 
+
+
+.sim-hint {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
+    text-align: center;
+}
+
 .input-container-side {
     flex: 0 0 350px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 25px;
     padding: 40px;
     background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(10px);
@@ -334,10 +357,32 @@ header {
     text-align: left;
 }
 
+
+.combo-box-placas {
+    width: 100%;
+    padding: 12px;
+    background-color: #000000;
+    color: #ffffff;       
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.combo-box-placas option {
+    background-color: #1a1a1a; 
+    color: #ffffff;          
+    padding: 10px;
+}
+
+
 .input-group {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .input-group label {
@@ -346,14 +391,15 @@ header {
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--cinza-claro);
-    opacity: 0.6;
+
+    font-weight: 700;
 }
 
 .input-container-side input {
     background: rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 18px;
-    font-size: 1.8rem;
+    padding: 15px;
+    font-size: 1.6rem;
     color: #fff;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -367,7 +413,7 @@ header {
 
 .input-container-side input:focus {
     border-color: #053194;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(5, 49, 148, 0.2);
     transform: translateY(-2px);
 }
 
@@ -375,27 +421,18 @@ header {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 20px;
 }
 
 .modelo-badge {
     display: inline-block;
-    background: #000000;
-    color: #053194;
-    padding: 8px 16px;
-    border-radius: 50px;
+    color: #fff;
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border: 1px solid rgba(37, 211, 102, 0.2);
+    font-size: 0.8rem;
+    font-weight: 500;
     text-align: center;
-}
-
-.tipo-moto ~ .input-container-side .modelo-badge {
-    background: rgba(246, 171, 30, 0.1);
-    color: #053194;
-    border-color: rgba(246, 171, 30, 0.2);
+    opacity: 0.7;
 }
 
 .sim-seta {
@@ -410,6 +447,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 5;
 }
 
 .sim-seta:hover {
@@ -815,7 +853,7 @@ header {
 }
 
 .footer-bottom {
-    margin-top: 60px;
+    margin-top: 20px;
     padding-top: 30px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     text-align: center;
@@ -827,6 +865,10 @@ header {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
+
+
+
 
 @media (max-width: 768px) {
     .footer-container {
@@ -957,30 +999,21 @@ header {
     object-fit: cover;
     object-position: center;
 }
-@media (max-width: 768px) {
-    
-    .video-bg {
-        display: none;
-    }
 
-    
-    .img-bg-mobile {
-        display: block;
-    }
 
-   
-    .carro-base {
-        height: 60vh;
-        min-height: 400px;
-    }
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: #fff;
+    cursor: pointer;
 }
 
 @media (max-width: 992px) {
     .container-header {
-        padding: 0 20px;
+        padding: 0 15px;
+        justify-content: space-between;
     }
 
-    
     .menu-navegacao ul {
         gap: 15px;
     }
@@ -990,7 +1023,6 @@ header {
         gap: 10px;
     }
 
-    
     .simulador-main-content {
         flex-direction: column;
         gap: 40px;
@@ -1003,7 +1035,6 @@ header {
         padding: 25px;
     }
 
-    
     .about-section {
         flex-direction: column;
         text-align: center;
@@ -1028,29 +1059,60 @@ header {
     }
 }
 
-
 @media (max-width: 768px) {
     header { 
         height: 75px; 
     }
 
     .logo-container .logo-img { 
-        height: 50px;
+        height: 110px !important;
+        width: auto;
+        transform: scale(1.2);
     }
 
     
+    .menu-toggle {
+        display: block;
+        z-index: 1001;
+    }
+
+    .menu-navegacao {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background: rgba(8, 8, 8, 0.98);
+        backdrop-filter: blur(10px);
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-navegacao.active {
+        right: 0; 
+    }
+
     .menu-navegacao ul {
-        gap: 10px;
+        flex-direction: column;
+        gap: 35px;
     }
 
     .menu-navegacao ul li a {
-        font-size: 0.65rem;
-        letter-spacing: 1px;
+        font-size: 1.3rem; 
+        letter-spacing: 2px;
     }
 
     .header-socials {
         display: none; 
     }
+
+    
+    .video-bg { display: none; }
+    .img-bg-mobile { display: block; }
+    .carro-base { height: 60vh; min-height: 400px; }
 
     .welcome-text { 
         top: 32%; 
@@ -1061,9 +1123,8 @@ header {
     .welcome-text .line-large { font-size: 2.0rem; }
     .welcome-text .line-medium { font-size: 2.0rem; }
 
-    /* Ajuste das placas no Simulador Mobile */
-    .tipo-carro .caracteres-placa {top: 55%;}
-    .tipo-carro .caracteres-placa { font-size: 2.5rem; }
+    
+    .tipo-carro .caracteres-placa { top: 55%; font-size: 2.5rem; }
     .tipo-moto .caracteres-placa { font-size: 2.2rem; }
 
     .input-container-side input {
@@ -1071,15 +1132,9 @@ header {
         padding: 12px;
     }
 
-    .cards {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-
-    /* Mapa e Rodapé */
-    .map-container {
-        height: 300px;
-    }
+    
+    .cards { grid-template-columns: 1fr; gap: 10px; }
+    .map-container { height: 300px; }
 
     .footer-column.branding,
     .footer-column.contact p {
@@ -1097,16 +1152,7 @@ header {
     }
 }
 
-
 @media (max-width: 360px) {
-    .menu-navegacao ul {
-        gap: 5px;
-    }
-    
-    .menu-navegacao ul li a {
-        font-size: 0.55rem;
-    }
-
     .welcome-text .line-large, 
     .welcome-text .line-medium { 
         font-size: 1.7rem; 

@@ -1,85 +1,85 @@
 const modelosPlacas = [
     {
         src: 'imagens/placa_particular.png',
-        nome: 'Placa Mercosul Particular',
+        nome: 'Carro Particular',
         tipo: 'carro',
         cor: '#1a1a1a'
     },
     {
         src: 'imagens/placa_comercial.png',
-        nome: 'Placa Mercosul Comercial',
+        nome: 'Carro Comercial',
         tipo: 'carro',
         cor: '#cc1122'
     },
     {
         src: 'imagens/placa_oficial.png',
-        nome: 'Placa Mercosul Oficial',
+        nome: 'Carro Oficial',
         tipo: 'carro',
         cor: '#1a6bbf'
     },
     {
         src: 'imagens/placa-colecionador-preta.png',
-        nome: 'Placa Mercosul Colecionador Original',
+        nome: 'Carro Colecionador Original',
         tipo: 'carro',
         cor: '#f1f1f1'
     },
     {
         src: 'imagens/placa_colecionador.png',
-        nome: 'Placa Mercosul Colecionador Modificado ',
+        nome: 'Carro Colecionador Modificado ',
         tipo: 'carro',
         cor: '#b0a0a8'
     },
     {
         src: 'imagens/placa_especial.png',
-        nome: 'Placa Mercosul Especial',
+        nome: 'Carro Especial',
         tipo: 'carro',
         cor: '#1a8c3a'
     },
     {
         src: 'imagens/placa_diplomatico.png',
-        nome: 'Placa Mercosul Diplomático',
+        nome: 'Carro Diplomático',
         tipo: 'carro',
         cor: '#e08000'
     },
     {
         src: 'imagens/moto_particular.png',
-        nome: 'Placa Moto Particular',
+        nome: 'Moto Particular',
         tipo: 'moto',
         cor: '#000000'
     },
     {
         src: 'imagens/moto_comercial.png',
-        nome: 'Placa Moto Comercial',
+        nome: 'Moto Comercial',
         tipo: 'moto',
         cor: '#cc1122'
     },
     {
         src: 'imagens/moto_oficial.png',
-        nome: 'Placa Moto Oficial',
+        nome: 'Moto Oficial',
         tipo: 'moto',
         cor: '#1a6bbf'
     },
     {
         src: 'imagens/moto-colecionador-preta.png',
-        nome: 'Placa Moto Colecionador Original',
+        nome: 'Moto Colecionador Original',
         tipo: 'moto',
         cor: '#f1f1f1'
     },
     {
         src: 'imagens/moto_colecionador.png',
-        nome: 'Placa Moto Colecionador Modificado',
+        nome: 'Moto Colecionador Modificado',
         tipo: 'moto',
         cor: '#b0a0a8'
     },
     {
         src: 'imagens/moto_especial.png',
-        nome: 'Placa Moto Especial',
+        nome: 'Moto Especial',
         tipo: 'moto',
         cor: '#1a8c3a'
     },
     {
         src: 'imagens/moto_diplomatico.png',
-        nome: 'Placa Moto Diplomático',
+        nome: 'Moto Diplomático',
         tipo: 'moto',
         cor: '#e08000'
     },
@@ -95,12 +95,24 @@ const nomeModeloSim = document.getElementById('nomeModeloPlaca');
 const containerSim = document.getElementById('placaContainerSim');
 const simPrev = document.getElementById('simPrev');
 const simNext = document.getElementById('simNext');
+const selectModelo = document.getElementById('selectModeloPlaca');
 
 let simIndex = 0;
 let simTransicionando = false;
 
+
+function popularSelect() {
+    if (!selectModelo) return;
+    modelosPlacas.forEach((modelo, index) => {
+        const option = document.createElement('option');
+        option.value = index;
+        option.textContent = modelo.nome;
+        selectModelo.appendChild(option);
+    });
+}
+
 function atualizarInterfaceSimulador(direcao = 0) {
-    if (!imgFundoSim || !nomeModeloSim) return;
+    if (!imgFundoSim) return;
 
     const modelo = modelosPlacas[simIndex];
     const sairX = direcao > 0 ? '-60px' : '60px';
@@ -112,9 +124,11 @@ function atualizarInterfaceSimulador(direcao = 0) {
 
     setTimeout(() => {
         imgFundoSim.src = modelo.src;
-        nomeModeloSim.innerText = modelo.nome;
         containerSim.className = `placa-base tipo-${modelo.tipo}`;
         displayPlaca.style.color = modelo.cor;
+        
+        
+        if (selectModelo) selectModelo.value = simIndex;
 
         const valor = inputPlaca.value.toUpperCase() || 'ABC1D23';
         if (modelo.tipo === 'moto' && valor.length > 3) {
@@ -135,6 +149,15 @@ function atualizarInterfaceSimulador(direcao = 0) {
             });
         });
     }, 260);
+}
+
+
+if (selectModelo) {
+    selectModelo.addEventListener('change', (e) => {
+        if (simTransicionando) return;
+        simIndex = parseInt(e.target.value);
+        atualizarInterfaceSimulador(0);
+    });
 }
 
 if (inputPlaca && displayPlaca) {
@@ -167,7 +190,7 @@ if (simNext && simPrev) {
 }
 
 
-/* --- SCROLL REVEAL --- */
+/* --- SCROLL --- */
 
 function inicializarScrollReveal() {
     const elementos = document.querySelectorAll(
@@ -203,11 +226,37 @@ function inicializarRevealCards() {
 }
 
 
+/* --- MENU HAMBÚRGUER --- */
+
+function inicializarMenuMobile() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (mobileMenu && navMenu) {
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileMenu.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        document.querySelectorAll('.menu-navegacao a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileMenu.querySelector('i');
+                icon.classList.replace('fa-times', 'fa-bars');
+            });
+        });
+    }
+}
+
+
 /* --- INICIALIZAÇÃO --- */
 
 document.addEventListener('DOMContentLoaded', () => {
-  
+    popularSelect();
     atualizarInterfaceSimulador();
     inicializarScrollReveal();
     inicializarRevealCards();
+    inicializarMenuMobile();
 });
