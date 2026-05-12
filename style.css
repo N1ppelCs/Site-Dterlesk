@@ -826,6 +826,28 @@ header {
     letter-spacing: 1px;
 }
 
+/*SEÇÃO NOMES DESENVOLVEDORES*/
+
+.names-devs ul li{
+    list-style: none;
+} 
+.names-devs ul li a{
+    color:var(--cinza-claro);
+    text-decoration: none;
+}
+
+.fa-linkedin{
+
+    color: #0077b5;
+    font-size: 18px;
+    margin-right: 3px;
+    padding: 2.5px;
+}
+.fa-linkedin:hover{
+        color: #005582;
+        transform : scale(1.1);
+}
+
 @media (max-width: 768px) {
     .footer-container {
         grid-template-columns: 1fr;
@@ -842,6 +864,9 @@ header {
 
     .footer-social-icons { justify-content: center; }
 }
+
+
+
 
 
 /* --- WHATSAPP FLUTUANTE --- */
@@ -1011,6 +1036,7 @@ header {
 
     .about-image {
         max-width: 100%;
+
     }
 
     .about-header::before {
@@ -1024,6 +1050,8 @@ header {
         text-align: center;
         gap: 40px;
     }
+    
+    
 }
 
 
