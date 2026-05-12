@@ -913,7 +913,16 @@ margin-top: 10px;
     }
 
     .footer-social-icons { justify-content: center; }
+
+    .footers-containers{
+        display: flex;
+        flex-direction: column;
+    }
+    .names-devs{
+        order: 2;
+    }
 }
+
 
 
 
