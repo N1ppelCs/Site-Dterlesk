@@ -827,6 +827,7 @@ header {
 }
 
 /*SEÇÃO NOMES DESENVOLVEDORES*/
+/*---------------------------*/
 
 .names-devs ul li{
     list-style: none;
@@ -847,6 +848,7 @@ header {
         color: #005582;
         transform : scale(1.1);
 }
+
 
 @media (max-width: 768px) {
     .footer-container {
