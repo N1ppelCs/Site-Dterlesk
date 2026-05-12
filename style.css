@@ -868,13 +868,21 @@ header {
 
 /*SEÇÃO NOMES DESENVOLVEDORES*/
 /*---------------------------*/
+.names-devs{
+
+margin-top: 10px;
+    
+}
+
 
 .names-devs ul li{
     list-style: none;
+    gap: 0;
 } 
 .names-devs ul li a{
     color:var(--cinza-claro);
     text-decoration: none;
+
 }
 
 .fa-linkedin{
