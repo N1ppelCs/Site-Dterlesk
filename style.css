@@ -899,8 +899,82 @@ margin-top: 10px;
 
 
 @media (max-width: 768px) {
+    header { 
+        height: 75px; 
+    }
+
+    .logo-container .logo-img { 
+        height: 110px !important;
+        width: auto;
+        transform: scale(1.2);
+    }
+    
+    .menu-toggle {
+        display: block;
+        z-index: 1001;
+    }
+
+    .menu-navegacao {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background: rgba(8, 8, 8, 0.98);
+        backdrop-filter: blur(10px);
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-navegacao.active {
+        right: 0; 
+    }
+
+    .menu-navegacao ul {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .menu-navegacao ul li a {
+        font-size: 1.3rem; 
+        letter-spacing: 2px;
+    }
+
+    .header-socials {
+        display: none; 
+    }
+    
+    .video-bg { display: none; }
+    .img-bg-mobile { display: block; }
+    .carro-base { height: 60vh; min-height: 400px; }
+
+    .welcome-text { 
+        top: 32%; 
+        left: 5%; 
+    }
+    
+    .welcome-text .line-small { font-size: 0.7rem; }
+    .welcome-text .line-large { font-size: 2.0rem; }
+    .welcome-text .line-medium { font-size: 2.0rem; }
+
+    .tipo-carro .caracteres-placa { top: 55%; font-size: 2.5rem; }
+    .tipo-moto .caracteres-placa { font-size: 2.2rem; }
+
+    .input-container-side input {
+        font-size: 1.5rem;
+        padding: 12px;
+    }
+    
+    .cards { grid-template-columns: 1fr; gap: 10px; }
+    .map-container { height: 300px; }
+
+    /* --- CORREÇÕES E ALINHAMENTO DO FOOTER --- */
     .footer-container {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         text-align: center;
         gap: 40px;
     }
@@ -912,17 +986,43 @@ margin-top: 10px;
         margin: 0 auto;
     }
 
-    .footer-social-icons { justify-content: center; }
-
-    .footers-containers{
-        display: flex;
-        flex-direction: column;
+    .footer-social-icons { 
+        justify-content: center; 
     }
-    .names-devs{
-        order: 2;
+
+    /* Centraliza os desenvolvedores no mobile */
+    .names-devs {
+        text-align: center;
+        margin-top: 40px;
+        width: 100%;
+    }
+    .names-devs h4{
+        margin-bottom: 15px;
+    }
+
+    .names-devs ul {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 0;
+        margin: 0 auto;
+    }
+    .names-devs ul li a{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-align: left;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 28px;
     }
 }
-
 
 
 
