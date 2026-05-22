@@ -971,7 +971,7 @@ margin-top: 10px;
     .cards { grid-template-columns: 1fr; gap: 10px; }
     .map-container { height: 300px; }
 
-    /* --- CORREÇÕES E ALINHAMENTO DO FOOTER --- */
+
     .footer-container {
         display: flex;
         flex-direction: column;
@@ -989,8 +989,6 @@ margin-top: 10px;
     .footer-social-icons { 
         justify-content: center; 
     }
-
-    /* Centraliza os desenvolvedores no mobile */
     .names-devs {
         text-align: center;
         margin-top: 40px;
